@@ -18,10 +18,9 @@ function calculatePositionSize() {
         return;
     }
 
-    const leveragedCapital = capital * leverage;
-    const riskAmount = leveragedCapital * riskPercentage;
+    const riskAmount = capital * riskPercentage;
     const stopLossDifference = entryPrice - stopLossPrice;
-    const positionSize = riskAmount / stopLossDifference;
+    const positionSize = (riskAmount / stopLossDifference) * leverage;
     const rewardAmount = (entryPrice - stopLossPrice) * positionSize;
 
     document.getElementById('positionSize').textContent = positionSize.toFixed(2);
