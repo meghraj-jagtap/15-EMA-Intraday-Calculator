@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.calculator {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.predefined {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.editable {
+    background-color: #fff;
+    border-color: #007bff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.primary {
+    width: 48%;
+    padding: 15px;
+    background: #3cb44e;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.secondary {
+    width: 48%;
+    padding: 15px;
+    background: #DCDCDC;
+    border: none;
+    color: balck;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.primary:hover {
+    background: linear-gradient(45deg, #ff4d4d, #ff8080);
+}
+
+.secondary:hover {
+    background: #5a6268;
+}
+
+#results {
+   text-align: right;
+   font-size: 12px;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 17px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    text-align: left;
+}
+
+.highlight {
+    color: #ff6666;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    .primary, .secondary {
+        font-size: 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
