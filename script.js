@@ -28,12 +28,12 @@ function calculatePositionSize() {
     const positionSize = (riskAmount / stopLossDifference) * leverage;
 
     // Calculate the potential reward
-    const rewardAmount = (entryPrice - stopLossPrice) * positionSize;
+    const rewardAmount = stopLossDifference * positionSize;
 
     // Update the results in the table
-    document.getElementById('positionSize').textContent = positionSize.toFixed(2);
-    document.getElementById('riskedAmount').textContent = riskAmount.toFixed(2);
-    document.getElementById('rewardAmount').textContent = rewardAmount.toFixed(2);
+    document.getElementById('positionSize').textContent = positionSize.toFixed(2) + " Qty";
+    document.getElementById('riskedAmount').textContent = `₹${riskAmount.toFixed(2)}`;
+    document.getElementById('rewardAmount').textContent = `₹${rewardAmount.toFixed(2)}`;
 }
 
 function resetValues() {
