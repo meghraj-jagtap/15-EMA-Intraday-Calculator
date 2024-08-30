@@ -8,18 +8,18 @@ function calculatePositionSize() {
     const entryPrice = parseFloat(document.getElementById("entryPrice").value);
     const stopLossPrice = parseFloat(document.getElementById("stopLossPrice").value);
 
-    // Calculate the Risk Amount considering the leverage
-    const riskAmount = (capital * (riskPercentage / 100)) / leverage;
+    // Calculate the Risk Amount based on the capital (not adjusted for leverage)
+    const riskAmount = (capital * (riskPercentage / 100));
 
     // Calculate the Position Size based on risk amount and price difference
-    const positionSize = riskAmount / (entryPrice - stopLossPrice);
+    const positionSize = riskAmount / Math.abs(entryPrice - stopLossPrice);
 
-    // Calculate the Potential Reward (not adjusted for reward calculation logic)
-    const potentialReward = positionSize * (entryPrice - stopLossPrice) * leverage;
+    // Calculate the Potential Reward assuming a 1:3 risk-to-reward ratio
+    const potentialReward = 3 * riskAmount;
 
     // Display the results in the HTML elements
-    document.getElementById("positionSize").innerText = `${positionSize.toFixed(2)} Qty`;
-    document.getElementById("riskedAmount").innerText = `₹${(riskAmount * leverage).toFixed(2)}`;
+    document.getElementById("positionSize").innerText = `${(positionSize * leverage).toFixed(2)} Qty`;
+    document.getElementById("riskedAmount").innerText = `₹${riskAmount.toFixed(2)}`;
     document.getElementById("potentialReward").innerText = `₹${potentialReward.toFixed(2)}`;
 }
 
