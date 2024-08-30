@@ -32,8 +32,8 @@ function calculatePositionSize() {
 
     // Update the results in the table
     document.getElementById('positionSize').textContent = positionSize.toFixed(2) + " Qty";
-    document.getElementById('riskedAmount').textContent = `₹${riskAmount.toFixed(2)}`;
-    document.getElementById('rewardAmount').textContent = `₹${rewardAmount.toFixed(2)}`;
+    document.getElementById('riskedAmount').textContent = `₹{riskAmount.toFixed(2)}`;
+    document.getElementById('rewardAmount').textContent = `₹{rewardAmount.toFixed(2)}`;
 }
 
 function resetValues() {
