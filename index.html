@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 EMA Intraday Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>15 EMA Intraday Calculator</h1>
+        
+        <label for="capital">Capital (₹):</label>
+        <input type="number" id="capital" value="50000" readonly class="predefined">
+
+        <label for="riskPercentage">Risk Percentage (%):</label>
+        <input type="number" id="riskPercentage" placeholder="Enter risk percentage" class="editable">
+
+        <label for="entryPrice">Entry Price (₹):</label>
+        <input type="number" id="entryPrice" placeholder="Enter entry price" class="editable">
+
+        <label for="stopLossPrice">Stop-Loss Price (₹):</label>
+        <input type="number" id="stopLossPrice" placeholder="Enter stop-loss price" class="editable">
+
+        <label for="leverage">Leverage:</label>
+        <input type="number" id="leverage" value="5" readonly class="predefined">
+
+        <div class="buttons">
+            <button class="primary" onclick="calculatePositionSize()">Calculate</button>
+            <button class="secondary" onclick="resetValues()">Reset</button>
+        </div>
+
+        <div id="results">
+            <h2>Results:</h2>
+            <table>
+                <tr>
+                    <th>Position Size</th>
+                    <td><span id="positionSize" class="highlight">-</span> Qty</td>
+                </tr>
+                <tr>
+                    <th>Risked Amount</th>
+                    <td>₹<span id="riskedAmount">-</span></td>
+                </tr>
+                <tr>
+                    <th>Potential Reward</th>
+                    <td>₹<span id="rewardAmount">-</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
