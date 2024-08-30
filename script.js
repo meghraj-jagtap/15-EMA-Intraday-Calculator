@@ -18,13 +18,13 @@ function calculatePositionSize() {
         return;
     }
 
-    const riskAmount = capital * riskPercentage;
+    const leveragedCapital = capital * leverage;
+    const riskAmount = leveragedCapital * riskPercentage;
     const stopLossDifference = entryPrice - stopLossPrice;
     const positionSize = riskAmount / stopLossDifference;
-    const leveragedPositionSize = positionSize * leverage;
-    const rewardAmount = (entryPrice - stopLossPrice) * leveragedPositionSize;
+    const rewardAmount = (entryPrice - stopLossPrice) * positionSize;
 
-    document.getElementById('positionSize').textContent = leveragedPositionSize.toFixed(2);
+    document.getElementById('positionSize').textContent = positionSize.toFixed(2);
     document.getElementById('riskedAmount').textContent = riskAmount.toFixed(2);
     document.getElementById('rewardAmount').textContent = rewardAmount.toFixed(2);
 }
